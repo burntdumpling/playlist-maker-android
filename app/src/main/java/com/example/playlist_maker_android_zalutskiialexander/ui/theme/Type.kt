@@ -6,6 +6,24 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
+val MenuFontFamily = FontFamily.SansSerif
+
+val SearchInputStyle = TextStyle(
+    fontFamily = MenuFontFamily,
+    fontWeight = FontWeight.Normal,
+    fontSize = 16.sp,
+    lineHeight = 20.sp,
+    color = MainTextColor
+)
+
+val SettingsRowStyle = TextStyle(
+    fontFamily = MenuFontFamily,
+    fontWeight = FontWeight.Normal,
+    fontSize = 16.sp,
+    lineHeight = 20.sp,
+    color = MainTextColor
+)
+
 // Set of Material typography styles to start with
 val Typography = Typography(
     bodyLarge = TextStyle(
