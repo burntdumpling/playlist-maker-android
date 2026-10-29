@@ -20,4 +20,10 @@
     <string name="developer_email_body">Спасибо разработчикам и разработчицам за крутое приложение!</string>
     <string name="practicum_offer_url">https://yandex.ru/legal/practicum_offer/</string>
     <string name="no_application">На устройстве нет приложения для этого действия</string>
+    <string name="search_loading">Поиск треков</string>
+    <string name="no_tracks_found">Ничего не найдено</string>
+    <string name="search_tracks_placeholder">Поиск треков</string>
+    <string name="search_icon">Поиск</string>
+    <string name="check_connection">Проверьте подключение к интернету</string>
+    <string name="arrow_forward">Открыть трек</string>
 </resources>

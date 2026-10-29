@@ -1,4 +1,7 @@
-package com.example.playlist_maker_android_zalutskiialexander
+package com.example.playlist_maker_android_zalutskiialexander.ui.setting
+
+import com.example.playlist_maker_android_zalutskiialexander.R
+import com.example.playlist_maker_android_zalutskiialexander.ui.ScreenHeader
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -40,7 +43,10 @@ import com.example.playlist_maker_android_zalutskiialexander.ui.theme.SettingsSw
 import com.example.playlist_maker_android_zalutskiialexander.ui.theme.Transparent
 
 @Composable
-fun SettingsScreen(onBackClick: () -> Unit) {
+fun SettingsScreen(
+    modifier: Modifier = Modifier,
+    navigateBack: () -> Unit
+) {
     val context = LocalContext.current
     val shareText = stringResource(R.string.share_message)
     val shareTitle = stringResource(R.string.share_app)
@@ -58,13 +64,13 @@ fun SettingsScreen(onBackClick: () -> Unit) {
         }
     }
 
-    BackHandler(onBack = onBackClick)
+    BackHandler(onBack = navigateBack)
     Column(
-        modifier = Modifier.fillMaxSize().background(ScreenBackground).safeDrawingPadding()
+        modifier = modifier.fillMaxSize().background(ScreenBackground).safeDrawingPadding()
     ) {
         ScreenHeader(
             title = stringResource(R.string.settings),
-            onBackClick = onBackClick
+            onBackClick = navigateBack
         )
         Column(
             modifier = Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(top = 24.dp)

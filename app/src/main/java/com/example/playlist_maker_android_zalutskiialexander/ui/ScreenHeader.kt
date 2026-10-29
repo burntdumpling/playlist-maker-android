@@ -1,4 +1,6 @@
-package com.example.playlist_maker_android_zalutskiialexander
+package com.example.playlist_maker_android_zalutskiialexander.ui
+
+import com.example.playlist_maker_android_zalutskiialexander.R
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
