@@ -1,5 +1,9 @@
-package com.example.playlist_maker_android_zalutskiialexander
+package com.example.playlist_maker_android_zalutskiialexander.ui.main
 
+import com.example.playlist_maker_android_zalutskiialexander.R
+
+import android.widget.Toast
+import androidx.compose.ui.platform.LocalContext
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -34,11 +38,20 @@ import com.example.playlist_maker_android_zalutskiialexander.ui.theme.ScreenBlue
 
 @Composable
 fun MainScreen(
-    onSearchClick: () -> Unit,
-    onPlaylistsClick: () -> Unit,
-    onFavoritesClick: () -> Unit,
-    onSettingsClick: () -> Unit
+    navigateToSearch: () -> Unit,
+    navigateToSettings: () -> Unit
 ) {
+    val context = LocalContext.current
+    val playlists = stringResource(R.string.playlists)
+    val favorites = stringResource(R.string.favorites)
+    val buttonClicked = stringResource(R.string.button_clicked)
+    val onPlaylistsClick: () -> Unit = {
+        Toast.makeText(context, buttonClicked.format(playlists), Toast.LENGTH_SHORT).show()
+    }
+    val onFavoritesClick: () -> Unit = {
+        Toast.makeText(context, buttonClicked.format(favorites), Toast.LENGTH_SHORT).show()
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -77,10 +90,10 @@ fun MainScreen(
                     top = 8.dp
                 )
         ) {
-            MainMenuItem(stringResource(R.string.search), R.drawable.ic_search, onSearchClick)
+            MainMenuItem(stringResource(R.string.search), R.drawable.ic_search, navigateToSearch)
             MainMenuItem(stringResource(R.string.playlists), R.drawable.ic_playlists, onPlaylistsClick)
             MainMenuItem(stringResource(R.string.favorites), R.drawable.ic_favorites, onFavoritesClick)
-            MainMenuItem(stringResource(R.string.settings), R.drawable.ic_settings, onSettingsClick)
+            MainMenuItem(stringResource(R.string.settings), R.drawable.ic_settings, navigateToSettings)
         }
     }
 }
